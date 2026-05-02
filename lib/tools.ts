@@ -328,18 +328,20 @@ export const TOOLS: ToolDef[] = [
     color: '#F97316',
     description: 'Generate quizzes on any topic',
     systemPrompt:
-      'Assessment designer. Generate quiz questions testing recall, comprehension, application, analysis. ' +
-      'Multiple choice: 4 options (A-D), mark correct with checkmark, brief explanation per answer. ' +
-      'Mix difficulty: 30% easy, 50% medium, 20% hard. End with answer key.',
+      'Assessment designer. Create high-quality quizzes with the fewest words needed to stay clear and accurate. ' +
+      'Start with a short title, then number questions clearly. Use the user\'s topic, level, and difficulty as strict guidance. ' +
+      'For multiple choice, use exactly 4 options (A-D) and mark the correct answer. For true/false, give one clear statement and the answer. ' +
+      'For short answer, keep answers concise and specific. Mix difficulty only when the user does not request a single level. ' +
+      'Avoid filler, repeated instructions, and long preambles. End with a compact answer key or marking guide.',
     placeholder: 'Enter the topic, subject, and difficulty level...',
     resultType: 'text',
     section: 'research',
     categories: ['student', 'tutor'],
     templates: [
-      { id: 'multiple-choice', name: 'Multiple Choice', icon: 'list', systemAddendum: 'Multiple choice with 4 options each. Mark correct answer, provide explanations.', placeholder: 'Enter the topic and number of questions...' },
-      { id: 'true-false', name: 'True / False', icon: 'checkmark-circle', systemAddendum: 'True/false questions. State claim, correct answer, and reasoning.', placeholder: 'Enter the topic for true/false questions...' },
-      { id: 'short-answer', name: 'Short Answer', icon: 'create', systemAddendum: 'Short answer questions testing understanding. Provide model answers.', placeholder: 'Enter the topic for short answer questions...' },
-      { id: 'fill-blanks', name: 'Fill in the Blanks', icon: 'remove-circle', systemAddendum: 'Fill-in-the-blank questions with answer key.', placeholder: 'Enter the topic for fill-in-the-blank questions...' },
+      { id: 'multiple-choice', name: 'Multiple Choice', icon: 'list', systemAddendum: 'Multiple choice with 4 options each. Mark correct answer, provide concise explanations, and keep each question exam-ready.', placeholder: 'Enter the topic and number of questions...' },
+      { id: 'true-false', name: 'True / False', icon: 'checkmark-circle', systemAddendum: 'True/false questions. Keep each statement unambiguous, provide the answer, and include one brief reason.', placeholder: 'Enter the topic for true/false questions...' },
+      { id: 'short-answer', name: 'Short Answer', icon: 'create', systemAddendum: 'Short answer questions testing understanding. Provide concise model answers and keep wording clear.', placeholder: 'Enter the topic for short answer questions...' },
+      { id: 'fill-blanks', name: 'Fill in the Blanks', icon: 'remove-circle', systemAddendum: 'Fill-in-the-blank questions with answer key. Keep the blanks unambiguous and grade-friendly.', placeholder: 'Enter the topic for fill-in-the-blank questions...' },
     ],
   },
 
@@ -459,18 +461,20 @@ export const TOOLS: ToolDef[] = [
     description: 'BECE, WASSCE & university practice',
     systemPrompt:
       'Exam preparation specialist for BECE, WASSCE/WAEC, and university assessments. ' +
-      'Generate realistic practice questions matching actual exam style and difficulty. ' +
-      'Include marking schemes with mark allocations [marks]. Provide model answers. ' +
-      'Number questions clearly. Mix difficulty levels.',
+      'Generate realistic past-question style papers that match the exam level, subject scope, and marking style the user requests. ' +
+      'Use a clear exam-paper format with section headings, numbered questions, and concise instructions. ' +
+      'When helpful, include objective, theory, and practical sections that fit the exam type. ' +
+      'Provide model answers and marking schemes with mark allocations only where they add value. ' +
+      'Prioritize correctness, curriculum alignment, and concise presentation over long explanations.',
     placeholder: 'Enter subject, exam type (BECE/WASSCE/University), and topic...',
     resultType: 'text',
     section: 'research',
     categories: ['student'],
     templates: [
-      { id: 'bece', name: 'BECE Practice', icon: 'school', systemAddendum: 'BECE style for Ghanaian JHS. Include objectives and essay sections.', placeholder: 'Enter the BECE subject and topic...' },
-      { id: 'wassce', name: 'WASSCE Practice', icon: 'ribbon', systemAddendum: 'WASSCE/WAEC style with objectives, theory, practical sections. Include marking schemes.', placeholder: 'Enter the WASSCE subject and topic...' },
-      { id: 'university', name: 'University Level', icon: 'school', systemAddendum: 'University-level exam questions: short answer, essay, problem-solving with model answers.', placeholder: 'Enter the course, level, and topic...' },
-      { id: 'mock-exam', name: 'Full Mock Exam', icon: 'document', systemAddendum: 'Complete mock exam paper with instructions, time allocation, sections, marking scheme.', placeholder: 'Enter the exam type, subject, and duration...' },
+      { id: 'bece', name: 'BECE Practice', icon: 'school', systemAddendum: 'BECE style for Ghanaian JHS. Use simple, accurate language and include objective plus essay sections where appropriate.', placeholder: 'Enter the BECE subject and topic...' },
+      { id: 'wassce', name: 'WASSCE Practice', icon: 'ribbon', systemAddendum: 'WASSCE/WAEC style with objectives, theory, practical sections. Include a compact marking scheme and clear model answers.', placeholder: 'Enter the WASSCE subject and topic...' },
+      { id: 'university', name: 'University Level', icon: 'school', systemAddendum: 'University-level exam questions: short answer, essay, problem-solving with model answers. Keep the level academically appropriate.', placeholder: 'Enter the course, level, and topic...' },
+      { id: 'mock-exam', name: 'Full Mock Exam', icon: 'document', systemAddendum: 'Complete mock exam paper with instructions, time allocation, sections, and a concise marking scheme.', placeholder: 'Enter the exam type, subject, and duration...' },
     ],
   },
 

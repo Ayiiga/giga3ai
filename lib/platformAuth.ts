@@ -1,4 +1,4 @@
-import a0 from 'a0-sdk';
+import { a0 } from 'a0-sdk';
 
 export type PlatformUser = {
   id: string;
@@ -9,8 +9,8 @@ export type PlatformUser = {
 
 function normalizeUser(user: any): PlatformUser | null {
   if (!user) return null;
-  const email = user.email || '';
-  const id = user.id || email || 'anonymous';
+  const email = String(user.email || '').trim().toLowerCase();
+  const id = String(user.id || email || 'anonymous');
   return {
     id,
     email,
@@ -20,7 +20,7 @@ function normalizeUser(user: any): PlatformUser | null {
 }
 
 function getAuth() {
-  return (a0 as any)?.auth ?? null;
+  return a0?.auth ?? null;
 }
 
 export function getCurrentUser(): PlatformUser | null {
