@@ -12,11 +12,11 @@
     "clean": "expo r -c"
   },
   "dependencies": {
-    "expo": "^52.0.46",
-    "react": "18.3.1",
-    "react-native": "0.76.9",
-    "react-dom": "18.3.1",
-    "react-native-web": "~0.19.13"
+  "expo": "~52.0.46",
+  "react": "18.2.0",
+  "react-native": "0.76.9",
+  "react-dom": "18.2.0",
+  "react-native-web": "~0.19.13"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
